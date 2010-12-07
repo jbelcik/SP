@@ -1,6 +1,8 @@
 #!/bin/bash
 
+
 echo
+
 echo
 echo -n "   " ; echo "Ala ma kota. Kot ma Ale." | sed -e 's/./!/'
 echo "   // program sed zastepuje pierwszy dowolny znak na wykrzyknik"
