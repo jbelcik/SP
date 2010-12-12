@@ -1,4 +1,4 @@
-Elementy zbioru ustawiamy rosn±co lub malej±co.
-Moc zbioru dzielimy na pó zaokr±glamy w gódo czêi ca³kowitej.
-Je¿eli warto¶æyliczonego elementu bêie za du¿a to ponawiamy operacjê pierwszej po³ó, je¿eli za ma³a to w drugiej.
-Powtarzamy t± czynno¶æ¿ trafimy na w³a¶ciwy wynik.
+Elementy zbioru ustawiamy rosnaco lub malejaco.
+Moc zbioru dzielimy na pol zaokraglamy w gore do czesci calkowitej.
+Jezeli wartosc wyliczonego elementu bedzie za duza to ponawiamy operacje w pierwszej polowce, jezeli za malo to w drugiej.
+Powtarzamy ta czynnosc az trafimy na wlasciwy wynik.
