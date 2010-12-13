@@ -1,1 +1,138 @@
-a
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[left=1.6in,right=.8in,top=1.5in,bottom=1.5in]{geometry}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[pdftex,linkbordercolor={0 0.9 1}]{hyperref}
+\usepackage{amsthm,amsmath,amsfonts,amssymb,mathrsfs}
+\usepackage{url}
+\usepackage{enumerate}
+\usepackage{graphicx}
+
+\newtheorem{tw}{Twierdzenie}[section]
+\newtheorem{stw}[tw]{Stwierdzenie}
+\newtheorem{fakt}[tw]{Fakt}
+\newtheorem{lemat}[tw]{Lemat}
+
+\theoremstyle{definition}
+\newtheorem{df}[tw]{Definicja}
+\newtheorem{ex}[tw]{Przykład}
+\newtheorem{uw}[tw]{Uwaga}
+\newtheorem{wn}[tw]{Wniosek}
+\newtheorem{zad}{Zadanie}
+
+\DeclareMathOperator{\R}{\mathbb{R}}
+\DeclareMathOperator{\Z}{\mathbb{Z}}
+\DeclareMathOperator{\N}{\mathbb{N}}
+\DeclareMathOperator{\Q}{\mathbb{Q}}
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\var}[1]{\operatorname{var}(#1)}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[R]{\textbf{\thepage}}
+\fancyhead[L]{\small\sffamily \nouppercase{\leftmark}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\title{Funkcje ciągłe i różniczkowalne}
+\date{\today}
+
+\author{Jakub Bełcik}
+
+
+\begin{document}
+
+
+
+\maketitle
+
+\tableofcontents
+
+\section{Funkcje ciągłe}
+
+\begin{df}
+(funkcja ciągła). Niech $f: (a,b) \rightarrow \mathbb{R}$, oraz niech $x_0 \in (a,b)$. Mówimy, że instrukcja $f$ jest ciągła w punkcie $x_0$ wtedy i tylko wtedy, gdy:
+\[ \forall_{\epsilon >0}\exists_{\delta >0}\forall x \in (a,b) |x-x_0| < \delta  \Rightarrow  |f(x) - f(x_0)| < \epsilon .\]
+\end{df}
+
+\begin{ex}
+Wielomiany, funkcje trygonometryczne, wykładnicze, logarytmiczne są ciągłe w każdym punkcie swojej dziedziny.
+\end{ex}
+
+\begin{ex}
+Funkcja $f$ dana wzorem:
+\[ f (x) = \left\{ \begin{array}{ll} x + 1 & \mbox{dla } x \neq  0 \\ 0 & \mbox{dla } x = 0 \end{array} \right. \]
+Jest ciągła w każym punkcie poza $x_0 = 0$.
+\\ Niech $\mathbb{Q}$ oznacza zbiór wszystkich liczb wymiernych.
+\end{ex}
+
+\begin{ex}
+Funkcja $f$ dana wzorem:
+\[ f (x) = \left\{ \begin{array}{ll} 0 & \mbox{dla } x \in  \mathbb{Q} \\ 1 & \mbox{dla } x \notin  \mathbb{Q} \end{array} \right. \]
+Nie jest ciągła w żadnym punkcie.
+\end{ex}
+
+\newpage
+
+\begin{ex}
+Funkcja $f$ dana wzorem:
+\[ f (x) = \left\{ \begin{array}{ll} 0 & \mbox{dla } x \in  \mathbb{Q} \\ x & \mbox{dla } x \notin  \mathbb{Q} \end{array} \right. \]
+Jest ciągła w punkcie $x_0 = 0$, ale nie jest ciągła w pozostałych punktach dziedziny.
+\end{ex}
+
+\begin{zad}
+Udowodnij prawdziwość podanych przykładów.
+\end{zad}
+
+\begin{df}
+Jeśli funkcja $f: A \rightarrow  \mathbb{R}$ jest ciągła w każdym punkcie swojej dziedziny $A$ to mówimy krótko, że jest ciągła.
+\[ \mbox{Poniższe twierdzenie zbiera podstawowe własności zbioru funkcji ciągłych.} \]
+\end{df}
+
+\begin{tw}
+Niech funkcje $f, g: R \rightarrow  \mathbb{R}$ będą ciągłe, oraz niech $\alpha , \beta  \in  \mathbb{R}$. Wtedy funkcje:
+\begin{enumerate}[a)]
+\item $h_1(x) = \alpha  \cdot  f(x) + \beta  \cdot  g(x)$,
+\item $h_2(x) = f(x) \cdot  g(x)$,
+\item $h_3(x) = \frac{f(x)}{g(x)}$ (o ile $g(x) \ne  0$ dla dowolnego $x \in \mathbb{R})$,
+\item $h_4(x) = f(g(x))$,
+\end{enumerate}
+Są ciągłe.
+\end{tw}
+
+Nie chciało mi się tego przepisywać to wkleiłem jakiś tekst o bobrach z google.pl... We wczesnym średniowieczu bóbr europejski (Castor fiber L.) zamieszkiwał licznie całą Europę i Azję od strefy stepów po tundrę. Jednak w początkach wieku XX przetrwało jedynie osiem małych populacji gromadzących w sumie ok. 1200 osobników. Gatunek stanął w obliczu groźby wyginięcia. W większości krajów zniknęły wraz z wiekiem XIX.
+
+\begin{tw}
+Niech $f: [a,b] \rightarrow  \mathbb{R}$ ciągła, oraz niech $f(a) \ne  f(b)$. Wtedy dla dowolnego $y_0 \in $ conv$\{f(a),f(b)\}$ istnieje $x_0 \in  [a,b]$ takie, że $f(x_0) = y_0$.
+\end{tw}
+
+\section{Różniczkowalność}
+
+\begin{df}
+Niech $F: (a,b) \rightarrow  \mathbb{R}, x_0 \in  (a,b)$ oraz $f$ ciągła w otoczeniu punktu $x_0$. Jeśli istnieje granica:
+\[ \lim_{x\rightarrow x_0} \frac{f(x) - f(x_0)}{x - x_0} \]
+I jest skończona, to oznaczamy ją przez $f'(x_0)$ i nazywamy pochodną funkcji $f$ w punkcie $x_0$.
+\end{df}
+
+\begin{df}
+Jeśli funkcja $f$ posiada pochodną w każdym punkcie swojej dziedziny, to mówimy, że $f$ jest różniczkowalna. Istnieje wtedy funkcja $f'$, która każdemu punktowi z dziedziny funkcji $f$ przyporządkowuje wartość pochodnej pochodnej funkcji $f$ w tym punkcie.
+\end{df}
+
+\begin{ex}
+Wielomiany, funkcje trygonometryczne, wykładnicze, logarytmiczne są różniczkowalne w każdym punkcie dziedziny.
+\end{ex}
+
+\begin{ex}
+Funkcja $f(x) = |x|$ jest ciągła, ale nie posiada pochodnej w punkcie $x_0 = 0$.
+\end{ex}
+
+\begin{tw}
+Niech $f: [a,b] \rightarrow  \mathbb{R}$ ciągła i różniczkowalna na (a,b). Dodatkowo niech $f'(x) \ne  0$ dla $x \in  (a,b)$, oraz niech $m = min_{x\in [a,b]}f(x), M = max_{x\in [a,b]}f(x)$. Wtedy na pewno $f(a) = m, f(b) = M$ lub $f(a) = M$ i $f(b) = m$.
+\end{tw}
+
+
+
+\end{document}
