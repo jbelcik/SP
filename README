@@ -1,0 +1,7 @@
+26zad:
+
+(Zakładając, że a = 0, …, 20; b = 0, …, a)
+
+Funkcja c1 jest obliczana poprzez zwykłą silnię i wymnaża duże liczby. Wyniki są błędne, ponieważ cała funkcja bazuje na liczbach całkowitych (int) które są w zakresie od −2 147 483 648 do +2 147 483 647. Liczby przekraczające ten przedział będą wyświetlane jako ujemne ponieważ będą 'ucinane' i na pierwszym bicie, który odpowiada za znak danej liczby, będzie stała jedynka, która zamienia daną liczbę na ujemną.
+
+W funkcji c2 wykorzystany jest wzór rekurencyjny, który omija wymnażanie dużych liczb. Funkcja ta daje poprawne wyniki, ponieważ działa ona na liczbach nie przekraczających dany przedział.
